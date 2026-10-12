@@ -1,0 +1,83 @@
+en:
+  SilverShop\Newsletter\Model\NewsletterSubscription:
+    SINGULARNAME: 'Newsletter subscriber'
+    PLURALNAME: 'Newsletter subscribers'
+    db_Email: 'Email address'
+    db_Status: 'Status'
+    db_Consent: 'Marketing consent'
+    db_ConsentAt: 'Consent given at'
+    db_Source: 'Source'
+    db_Locale: 'Locale'
+    db_FirstName: 'First name'
+    db_Surname: 'Surname'
+    db_ConfirmedAt: 'Confirmed at'
+    db_UnsubscribedAt: 'Unsubscribed at'
+    db_SyncedAt: 'Last synced at'
+    db_ExternalID: 'ESP contact ID'
+    has_one_Member: 'Member'
+  SilverShop\Newsletter\Admin\NewsletterAdmin:
+    MENUTITLE: 'Subscribers'
+  SilverShop\Newsletter\Control\NewsletterController:
+    Title: 'Newsletter'
+    Email: 'Email address'
+    EmailPlaceholder: 'you@example.com'
+    Consent: 'Yes, send me the newsletter. I can unsubscribe at any time.'
+    Subscribe: 'Subscribe'
+    ConsentRequired: 'Please tick the box to give your consent.'
+    InvalidEmail: 'Please enter a valid email address.'
+    CheckInbox: 'Almost there! Please check your inbox to confirm your subscription.'
+    Thanks: 'Thanks for subscribing!'
+  SilverShop\Newsletter\Service\NewsletterService:
+    ConfirmSubject: 'Please confirm your newsletter subscription to {shop}'
+  SilverShop\Newsletter\Extension\NewsletterCheckoutExtension:
+    OptIn: 'Keep me up to date with news and offers by email'
+  SilverShop\Newsletter\Extension\NewsletterAccountExtension:
+    Title: 'Email preferences'
+    Subscribe: 'Subscribe me to the newsletter'
+    Save: 'Save preferences'
+    Saved: 'Your email preferences have been saved.'
+  SilverShop\Newsletter\Provider\LocalProvider:
+    NAME: 'Local list only'
+  SilverShop\Newsletter\Job\NewsletterSyncJob:
+    TITLE: 'Sync newsletter subscriber #{id} ({action}) to the ESP'
+  SilverShop\Newsletter\Report\SubscribersReport:
+    TITLE: 'Newsletter subscribers'
+    DESC: 'All newsletter subscribers with their status, source and marketing-consent timestamp.'
+    Status: 'Status'
+    AnyStatus: '(any)'
+    Pending: 'Pending'
+    Subscribed: 'Subscribed'
+    Unsubscribed: 'Unsubscribed'
+    Bounced: 'Bounced'
+    Cleaned: 'Cleaned'
+    Source: 'Source'
+    AnySource: '(any)'
+    SourceFooter: 'Footer / sidebar form'
+    SourceCheckout: 'Checkout'
+    SourceAccount: 'Account'
+    SourceImport: 'Import'
+    SourceApi: 'API'
+    ColEmail: 'Email'
+    ColStatus: 'Status'
+    ColSource: 'Source'
+    ColLocale: 'Locale'
+    ColConsent: 'Consent given'
+    ColCreated: 'Created'
+  SilverShop\Newsletter:
+    Confirmed: "You're subscribed"
+    ConfirmedMsg: "Thanks for confirming — you'll now receive our newsletter."
+    Unsubscribed: "You've been unsubscribed"
+    UnsubscribedMsg: "You won't receive our newsletter anymore. Sorry to see you go."
+    Invalid: 'This link is not valid'
+    InvalidMsg: 'This confirmation or unsubscribe link has expired or is incorrect.'
+    Preferences: 'Email preferences'
+    PreferencesMsg: "Choose whether you'd like to receive our newsletter."
+    SignupHeading: 'Subscribe to our newsletter'
+    SignupIntro: 'Get news and offers in your inbox. Unsubscribe any time.'
+    ConfirmTitle: 'Confirm your subscription'
+    ConfirmGreeting: 'Thanks for signing up for our newsletter.'
+    ConfirmInstruction: 'Please confirm your subscription by clicking the button below.'
+    ConfirmButton: 'Confirm my subscription'
+    ConfirmFallback: "If the button doesn't work, copy this link into your browser:"
+    ConfirmIgnore: "If you didn't request this, you can safely ignore this email, or"
+    Unsubscribe: 'unsubscribe'

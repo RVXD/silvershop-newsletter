@@ -1,0 +1,34 @@
+---
+Name: silvershop-newsletter
+After:
+  - '#queuedjobs'
+---
+SilverStripe\Security\Member:
+  extensions:
+    - SilverShop\Newsletter\Extension\NewsletterMemberExtension
+
+# Newsletter provider registry. ESP adapters (e.g. silvershop/newsletter-campaignmonitor) register themselves
+# here; the default active provider is the local (no-op) list, so the newsletter works with zero ESP configured.
+# To switch provider, set `active` to the adapter's key once its credentials are in place.
+SilverShop\Newsletter\Provider\NewsletterProviderRegistry:
+  active: local
+  providers:
+    local: SilverShop\Newsletter\Provider\LocalProvider
+
+# The ESP sync job is retried a few times with a growing delay for transient ESP / network errors.
+SilverShop\Newsletter\Job\NewsletterSyncJob:
+  retry_max_attempts: 3
+  retry_initial_delay: 60
+  retry_falloff_multiplier: 2
+
+SilverShop\Newsletter\Service\NewsletterService:
+  # Guests must confirm via a double-opt-in email before counting as subscribed (GDPR-friendly).
+  double_opt_in: true
+  # Logged-in members (identity established) are auto-confirmed instead of being emailed a confirm link.
+  member_auto_confirm: true
+  # Checkout opt-in checkbox (only rendered when silvershop/core is installed).
+  checkout_enabled: true
+  # GDPR default: the checkout opt-in starts unchecked.
+  checkout_default_checked: false
+  # Sender address for the confirm email (falls back to store-profile / SiteConfig / admin email when empty).
+  from_email: ''

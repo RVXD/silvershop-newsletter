@@ -1,0 +1,7 @@
+---
+Name: silvershop-newsletter-routes
+After: '#rootroutes'
+---
+SilverStripe\Control\Director:
+  rules:
+    'newsletter': 'SilverShop\Newsletter\Control\NewsletterController'

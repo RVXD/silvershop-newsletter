@@ -1,0 +1,16 @@
+includes:
+    - vendor/cambis/silverstan/extension.neon
+
+parameters:
+    level: 5
+    paths:
+        - src
+    # These extensions integrate with silvershop/core (a SOFT dependency, absent from the standalone analysis).
+    # They are only ever attached behind class_exists() guards in _config.php, and are exercised live on a shop.
+    excludePaths:
+        - src/Extension/NewsletterCheckoutExtension.php
+        - src/Extension/NewsletterOrderExtension.php
+        - src/Extension/NewsletterAccountExtension.php
+    treatPhpDocTypesAsCertain: false
+    silverstan:
+        includeTestOnly: true
