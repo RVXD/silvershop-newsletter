@@ -23,10 +23,11 @@ class NewsletterOrderExtension extends Extension
 {
     public function onPlaceOrder(): void
     {
-        if (!Controller::has_curr()) {
+        $controller = Controller::curr();
+        if ($controller === null) {
             return;
         }
-        $request = Controller::curr()->getRequest();
+        $request = $controller->getRequest();
         if (!$request || !$request->postVar('SubscribeNewsletter')) {
             return;
         }
